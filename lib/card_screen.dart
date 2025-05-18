@@ -19,11 +19,10 @@ class CardScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue[800],
-        elevation: 0,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-        ),
+        backgroundColor: Colors.indigo[200],
+        // shape: const RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+        // ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: SingleChildScrollView(
@@ -37,7 +36,7 @@ class CardScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
+                  color: Colors.grey,
                 ),
               ),
               const SizedBox(height: 24),
@@ -49,16 +48,15 @@ class CardScreen extends StatelessWidget {
                 child: ElevatedButton.icon(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[400],
+                    backgroundColor: Colors.indigo[400],
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
+                      horizontal: 145,
                       vertical: 12,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    elevation: 5,
                   ),
                   icon: const Icon(Icons.add, size: 24),
                   label: const Text('New', style: TextStyle(fontSize: 16)),
@@ -80,11 +78,10 @@ class CardScreen extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
           child: Card(
-            elevation: 8,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            color: Colors.teal[300],
+            color: Colors.lightBlue[300],
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
@@ -201,11 +198,10 @@ class CardScreen extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
           child: Card(
-            elevation: 8,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            color: Colors.cyan[400],
+            color: Colors.indigo[400],
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
@@ -294,7 +290,7 @@ class CardScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   LinearProgressIndicator(
                     value: 0.35,
-                    backgroundColor: Colors.cyan[300],
+                    backgroundColor: Colors.indigo[300],
                     valueColor: const AlwaysStoppedAnimation<Color>(
                       Colors.white,
                     ),

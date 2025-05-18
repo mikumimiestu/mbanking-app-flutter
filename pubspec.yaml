@@ -39,6 +39,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -59,6 +65,20 @@ flutter:
   assets:
     - assets/visa.png
     - assets/mastercard.png
+    - assets/bca.png
+    - assets/bni.png
+    - assets/bri.png
+    - assets/danamon.png
+    - assets/mandiri.png
+    - assets/cimb.png
+    - assets/permata.png
+    - assets/maybank.png
+    - assets/bsi.png
+    - assets/ocbc.png
+    - assets/btpn.png
+    - assets/citi.png
+    - assets/hsbc.png
+    - assets/dbs.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

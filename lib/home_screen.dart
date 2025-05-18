@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
+import 'package:mbanking_app_flutter/transfer_page.dart';
+import 'package:mbanking_app_flutter/terima_page.dart';
+import 'package:mbanking_app_flutter/history_page.dart';
+import 'package:mbanking_app_flutter/qrpay_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -49,21 +53,60 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue[800],
+        backgroundColor: Colors.indigo[200],
         elevation: 0,
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+          // borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            _buildUserProfile(),
             _buildBalanceCard(),
             _buildQuickActions(),
             _buildTransactionHistory(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildUserProfile() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      color: Colors.indigo[200],
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(
+              'https://i.pinimg.com/736x/ce/0a/a4/ce0aa48f676de171d21a634d45a40946.jpg',
+            ),
+          ),
+          const SizedBox(width: 16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Selamat Datang',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 14,
+                ),
+              ),
+              const Text(
+                'Mikumiestu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -80,12 +123,12 @@ class _HomeScreenState extends State<HomeScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Colors.blue[600]!, Colors.blue[300]!],
+          colors: [Colors.indigo[600]!, Colors.indigo[300]!],
         ),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.blue.withOpacity(0.3),
+            color: Colors.indigo.withOpacity(0.3),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -128,29 +171,48 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildActionButton(IconData icon, String label, Color iconColor) {
-    return InkWell(
-      onTap: () {},
+  Widget _buildActionButton(IconData icon, String label, Color color) {
+    return GestureDetector(
+      onTap: () {
+        switch (label) {
+          case 'Transfer':
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TransferPage()),
+            );
+            break;
+          case 'Terima':
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TerimaPage()),
+            );
+            break;
+          case 'QR Pay':
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => QRPayPage()),
+            );
+            break;
+          case 'History':
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HistoryPage()),
+            );
+            break;
+        }
+      },
       child: Column(
         children: [
           Container(
-            width: 50,
-            height: 50,
+            padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.indigo[300],
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, color: iconColor),
+            child: Icon(icon, color: color),
           ),
-          const SizedBox(height: 8),
-          Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          SizedBox(height: 8),
+          Text(label),
         ],
       ),
     );
@@ -190,13 +252,21 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisCount: 4,
             childAspectRatio: 0.9,
             children: [
-              _buildServiceButton(Icons.phone_android, 'Pulsa', Colors.blue),
+              _buildServiceButton(Icons.phone_android, 'Pulsa', Colors.indigo),
               _buildServiceButton(Icons.bolt, 'PLN', Colors.orange),
-              _buildServiceButton(Icons.water_drop, 'PDAM', Colors.blue),
+              _buildServiceButton(Icons.water_drop, 'PDAM', Colors.indigo),
               _buildServiceButton(Icons.tv, 'TV Kabel', Colors.purple),
-              _buildServiceButton(Icons.school, 'BPJS', Colors.green),
+              _buildServiceButton(
+                Icons.health_and_safety_outlined,
+                'BPJS',
+                Colors.green,
+              ),
               _buildServiceButton(Icons.card_giftcard, 'Voucher', Colors.red),
-              _buildServiceButton(Icons.money, 'Pinjaman', Colors.teal),
+              _buildServiceButton(
+                Icons.local_atm_rounded,
+                'Pinjaman',
+                Colors.teal,
+              ),
               _buildServiceButton(Icons.more_horiz, 'Lainnya', Colors.grey),
             ],
           ),
@@ -270,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {},
                 child: const Text(
                   'Lihat Semua',
-                  style: TextStyle(color: Colors.blue),
+                  style: TextStyle(color: Colors.indigo),
                 ),
               ),
             ],

@@ -65,11 +65,11 @@ class _ProfileScreenState extends State<ProfileScreen>
           ),
         ),
         centerTitle: true,
-        backgroundColor: isDarkMode ? Colors.grey[900] : Colors.blue[800],
+        backgroundColor: isDarkMode ? Colors.grey[900] : Colors.indigo[200],
         elevation: 0,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-        ),
+        // shape: const RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+        // ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: FadeTransition(
@@ -90,8 +90,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                         border: Border.all(
                           color:
                               isDarkMode
-                                  ? Colors.blue[400]!
-                                  : Colors.blue[800]!,
+                                  ? Colors.indigo[400]!
+                                  : Colors.indigo[800]!,
                           width: 3,
                         ),
                         boxShadow: [
@@ -113,7 +113,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                     Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: isDarkMode ? Colors.blue[700] : Colors.blue[800],
+                        color:
+                            isDarkMode
+                                ? Colors.indigo[700]
+                                : Colors.indigo[800],
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isDarkMode ? Colors.grey[800]! : Colors.white,
@@ -150,17 +153,21 @@ class _ProfileScreenState extends State<ProfileScreen>
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Chip(
                     backgroundColor:
-                        isDarkMode ? Colors.blue[900] : Colors.blue[50],
+                        isDarkMode ? Colors.indigo[900] : Colors.indigo[50],
                     label: Text(
                       'Prioritas',
                       style: TextStyle(
-                        color: isDarkMode ? Colors.blue[200] : Colors.blue[800],
+                        color:
+                            isDarkMode
+                                ? Colors.indigo[200]
+                                : Colors.indigo[800],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     avatar: Icon(
                       Icons.verified,
-                      color: isDarkMode ? Colors.blue[200] : Colors.blue[800],
+                      color:
+                          isDarkMode ? Colors.indigo[200] : Colors.indigo[800],
                       size: 18,
                     ),
                   ),
@@ -300,12 +307,12 @@ class _ProfileScreenState extends State<ProfileScreen>
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: isDarkMode ? Colors.blue[900] : Colors.blue[50],
+          color: isDarkMode ? Colors.indigo[900] : Colors.indigo[50],
           shape: BoxShape.circle,
         ),
         child: Icon(
           icon,
-          color: isDarkMode ? Colors.blue[200] : Colors.blue[800],
+          color: isDarkMode ? Colors.indigo[200] : Colors.indigo[800],
         ),
       ),
       title: Text(
