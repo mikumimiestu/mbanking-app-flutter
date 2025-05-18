@@ -1,16 +1,40 @@
 # mbanking_app_flutter
 
-A new Flutter project.
+![Powered by Mikumimiestu](https://img.shields.io/badge/CreatedBy-Mikumimiestu%20-ffb6c1?style=flat-square&logo=sparkles&logoColor=white)
 
-## Getting Started
+Aplikasi Mobile Banking sederhana berbasis Flutter.
 
-This project is a starting point for a Flutter application.
+## Fitur Utama
 
-A few resources to get you started if this is your first Flutter project:
+- **Tampilan Saldo**: Lihat saldo rekening utama Anda.
+- **Transfer Uang**: Kirim uang ke rekening lain dengan mudah.
+- **Terima Uang**: Fitur untuk menerima transfer dari pengguna lain.
+- **QR Pay**: Pembayaran menggunakan QR code.
+- **Riwayat Transaksi**: Lihat daftar transaksi terakhir.
+- **Layanan Cepat**: Pembelian pulsa, PLN, PDAM, TV Kabel, BPJS, Voucher, Pinjaman, dan lainnya.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Struktur Folder
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `lib/`
+  - `home_screen.dart` : Halaman utama aplikasi.
+  - `page/transfer_page.dart` : Halaman transfer uang.
+  - `page/terima_page.dart` : Halaman terima uang.
+  - `page/history_page.dart` : Halaman riwayat transaksi.
+  - `page/qrpay_page.dart` : Halaman pembayaran QR.
+
+## Cara Menjalankan
+
+1. Pastikan sudah menginstall [Flutter](https://docs.flutter.dev/get-started/install).
+2. Jalankan perintah berikut di terminal:
+   ```bash
+   flutter pub get
+   flutter run
+   ```
+
+## Asset
+
+Pastikan asset gambar bank sudah didaftarkan di `pubspec.yaml` dan tersedia di folder `assets/`.
+
+## Dokumentasi Flutter
+
+- [Dokumentasi Flutter](https://docs.flutter.dev/)

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mbanking_app_flutter/card_screen.dart';
+import 'package:mbanking_app_flutter/components/card_screen.dart';
 import 'package:mbanking_app_flutter/home_screen.dart';
-import 'package:mbanking_app_flutter/profile_screen.dart';
+import 'package:mbanking_app_flutter/components/profile_screen.dart';
 
 void main() {
   runApp(const MbakingApp());

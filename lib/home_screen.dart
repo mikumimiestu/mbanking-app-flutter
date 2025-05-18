@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
-import 'package:mbanking_app_flutter/transfer_page.dart';
-import 'package:mbanking_app_flutter/terima_page.dart';
-import 'package:mbanking_app_flutter/history_page.dart';
-import 'package:mbanking_app_flutter/qrpay_page.dart';
+import 'package:mbanking_app_flutter/page/transfer_page.dart';
+import 'package:mbanking_app_flutter/page/terima_page.dart';
+import 'package:mbanking_app_flutter/page/history_page.dart';
+import 'package:mbanking_app_flutter/page/qrpay_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
