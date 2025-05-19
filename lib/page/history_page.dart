@@ -52,6 +52,24 @@ class HistoryPage extends StatelessWidget {
         'status': 'success',
         'icon': Icons.bolt,
       },
+      {
+        'type': 'transfer',
+        'amount': 200000,
+        'name': 'John Doe',
+        'time': '09:30 AM',
+        'date': '07 Mei 2023',
+        'status': 'success',
+        'icon': Icons.arrow_upward,
+      },
+      {
+        'type': 'receive',
+        'amount': 750000,
+        'name': 'Jane Smith',
+        'time': '09:15 AM',
+        'date': '06 Mei 2023',
+        'status': 'success',
+        'icon': Icons.arrow_downward,
+      },
     ];
 
     return Scaffold(
@@ -63,10 +81,10 @@ class HistoryPage extends StatelessWidget {
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.blue[800],
+        backgroundColor: Colors.white,
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list, color: Colors.white),
+            icon: Icon(Icons.filter_list, color: Colors.black),
             onPressed: () {
               // Filter logic
               _showFilterBottomSheet(context);
@@ -79,7 +97,7 @@ class HistoryPage extends StatelessWidget {
           // Header with summary
           Container(
             padding: const EdgeInsets.all(16),
-            color: Colors.blue[800],
+            color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -88,12 +106,12 @@ class HistoryPage extends StatelessWidget {
                   children: [
                     Text(
                       'Total Pengeluaran',
-                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
                     Text(
-                      'Rp 970.000',
+                      'Rp 2.970.000',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.red,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -105,12 +123,12 @@ class HistoryPage extends StatelessWidget {
                   children: [
                     Text(
                       'Total Pemasukan',
-                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
                     Text(
-                      'Rp 1.750.000',
+                      'Rp 32.750.000',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.green,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -268,14 +286,20 @@ class HistoryPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[800],
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: Colors.indigo[200],
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 40,
+                    ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(22),
                     ),
                   ),
                   onPressed: () => Navigator.pop(context),
-                  child: const Text('Terapkan Filter'),
+                  child: const Text(
+                    'Terapkan Filter',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ],
@@ -292,14 +316,14 @@ class HistoryPage extends StatelessWidget {
         children: [
           Icon(
             isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
-            color: isSelected ? Colors.blue[800] : Colors.grey,
+            color: isSelected ? Colors.indigo[800] : Colors.grey,
           ),
           const SizedBox(width: 12),
           Text(
             title,
             style: TextStyle(
               fontSize: 16,
-              color: isSelected ? Colors.blue[800] : Colors.black,
+              color: isSelected ? Colors.indigo[800] : Colors.black,
             ),
           ),
         ],
@@ -393,7 +417,7 @@ class HistoryPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[800],
+                    backgroundColor: Colors.indigo[800],
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
