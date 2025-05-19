@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Colors.indigo[600]!, Colors.indigo[300]!],
+          colors: [Colors.indigo[500]!, Colors.indigo[200]!],
         ),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
           case 'QR Pay':
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => QRPayPage()),
+              MaterialPageRoute(builder: (context) => QrpayPage()),
             );
             break;
           case 'History':

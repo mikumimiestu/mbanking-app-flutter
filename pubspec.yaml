@@ -79,6 +79,7 @@ flutter:
     - assets/citi.png
     - assets/hsbc.png
     - assets/dbs.png
+    - assets/qris.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
